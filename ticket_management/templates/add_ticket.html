@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>添加门票</title>
+</head>
+<body>
+    <h1>添加新门票</h1>
+    <form action="/add_ticket" method="post" enctype="multipart/form-data">
+        <input type="text" name="ticket_name" placeholder="门票名称" required>
+        <input type="text" name="price" placeholder="价格" required>
+        <input type="text" name="location" placeholder="地点" required>
+        <input type="text" name="main_actor" placeholder="主演人" required>
+        <input type="date" name="date" required>
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">添加门票</button>
+    </form>
+</body>
+</html>

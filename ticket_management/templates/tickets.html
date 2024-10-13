@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>门票列表</title>
+</head>
+<body>
+    <h1>可购买的门票</h1>
+    <ul>
+        {% for ticket in tickets %}
+            <li>
+                <img src="{{ ticket.image }}" alt="门票图片" style="width:100px;height:100px;">
+                <p>{{ ticket.name }} - 价格: {{ ticket.price }} 元 - 地点: {{ ticket.location }} - 日期: {{ ticket.date }}</p>
+                <p>主演人: {{ ticket.main_actor }}</p>
+                <a href="{{ url_for('purchase', ticket_index=loop.index0) }}">购买</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
