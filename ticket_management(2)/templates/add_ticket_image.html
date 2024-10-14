@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>上传门票图片</title>
+</head>
+<body>
+    <h1>上传门票图片</h1>
+    <form action="/add_ticket_image" method="post" enctype="multipart/form-data">
+        <input type="text" name="ticket_name" placeholder="门票名称" required>
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">上传图片</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
