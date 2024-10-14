@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购买门票</title>
+</head>
+<body>
+    <h1>购买 {{ ticket.name }} 门票</h1>
+    <form action="" method="post">
+        <input type="text" name="username" placeholder="用户名" required>
+        <button type="submit">确认购买</button>
+    </form>
+    <h2>实名认证</h2>
+    <form action="{{ url_for('authenticate') }}" method="post">
+        <input type="text" name="username" placeholder="用户名" required>
+        <input type="text" name="real_name" placeholder="真实姓名" required>
+        <input type="text" name="id_card" placeholder="身份证号" required>
+        <button type="submit">实名认证</button>
+    </form>
+    <a href="{{ url_for('show_tickets') }}">取消</a>
+</body>
+</html>
